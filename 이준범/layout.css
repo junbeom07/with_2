@@ -1,0 +1,66 @@
+body {
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'left content right'
+        'footer footer footer';
+    grid-template-columns: 400px 1fr 300px;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: #ffffff; 
+    text-align: center;
+    padding : 20px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+aside.left {
+    grid-area: left;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+aside.right {
+    grid-area: right;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+main {
+    grid-area: content;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            'header'
+            'content'
+            'left'
+            'right'
+            'footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto auto auto;
+    }
+
+    aside.left,
+    aside.right {
+        padding: 10px;
+    }
+}

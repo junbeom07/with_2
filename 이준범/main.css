@@ -1,0 +1,59 @@
+table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 30px; /* 값을 증가시킵니다 */
+    margin-bottom: 20px;
+}
+table.a {
+    border-spacing: 10px; /* 테이블 셀 간의 간격 설정 */
+    border-collapse: separate; /* 간격이 적용되도록 설정 */
+}
+
+table.a td {
+    border: 0.5px solid #a7a7a7; /* 테두리 스타일 */
+    border-radius: 8px;
+}
+
+
+th {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 20px; 
+    text-align: center;
+}
+
+.laptop-status, .rented-laptops {
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 4PX solid #a7a7a7;
+}
+
+.laptop-status {
+    flex: 3;
+    max-height: 70vh;
+}
+
+.rented-laptops {
+    flex: 1;
+    min-height: 70vh;
+    max-height: 60vh; 
+    overflow-y: auto; 
+}
+
+.available {
+    background-color: #d4edda; 
+    color: #155724;
+    font-weight: bold;
+}
+
+.unavailable {
+    background-color: #f8d7da; 
+    color: #721c24;
+    font-weight: bold;
+}
