@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이준범</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="c.css">
+    <link rel="stylesheet" href="d.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+</head>
+<body>
+    <header>
+        <h1>A heading here</h1>
+        <p>Posted by John Doe</p>
+    </header>
+    <aside class="left">
+        <h2>달력</h2>
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <span id="month-year"></span>
+                <button id="next-month">&gt;</button>
+            </div>
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </div>
+          <button id="show-form-btn">대여하기</button>
+    </aside>
+    <main>
+        <h2>노트북 대여 현황</h2>
+        <div class="laptop-status">
+            <table class = 'a'>
+                <tbody>
+                    <tr>
+                        <td id="pc01" class="available" data-id="pc01">PC01</td>
+                        <td id="pc02" class="available" data-id="pc02">PC02</td>
+                        <td id="pc03" class="available" data-id="pc03">PC03</td>
+                        <td id="pc04" class="available" data-id="pc04">PC04</td>
+                    </tr>
+                    <tr>
+                        <td id="pc05" class="available" data-id="pc05">PC05</td>
+                        <td id="pc06" class="available" data-id="pc06">PC06</td>
+                        <td id="pc07" class="available" data-id="pc07">PC07</td>
+                        <td id="pc08" class="available" data-id="pc08">PC08</td>
+                    </tr>
+                    <tr>
+                        <td id="pc09" class="available" data-id="pc09">PC09</td>
+                        <td id="pc10" class="available" data-id="pc10">PC10</td>
+                        <td id="pc11" class="available" data-id="pc11">PC11</td>
+                        <td id="pc12" class="available" data-id="pc12">PC12</td>
+                    </tr>
+                    <tr>
+                        <td id="pc13" class="available" data-id="pc13">PC13</td>
+                        <td id="pc14" class="available" data-id="pc14">PC14</td>
+                        <td id="pc15" class="available" data-id="pc15">PC15</td>
+                        <td id="pc16" class="available" data-id="pc16">PC16</td>
+                    </tr>
+                    <tr>
+                        <td id="pc17" class="available" data-id="pc17">PC17</td>
+                        <td id="pc18" class="available" data-id="pc18">PC18</td>
+                        <td id="pc19" class="available" data-id="pc19">PC19</td>
+                        <td id="pc20" class="available" data-id="pc20">PC20</td>
+                    </tr>
+                    <tr>
+                        <td id="pc21" class="available" data-id="pc21">PC21</td>
+                        <td id="pc22" class="available" data-id="pc22">PC22</td>
+                        <td id="pc23" class="available" data-id="pc23">PC23</td>
+                        <td id="pc24" class="available" data-id="pc24">PC24</td>
+                    </tr>
+                    <tr>
+                        <td id="pc25" class="available" data-id="pc25">PC25</td>
+                        <td id="pc26" class="available" data-id="pc26">PC26</td>
+                        <td id="pc27" class="available" data-id="pc27">PC27</td>
+                        <td id="pc28" class="available" data-id="pc28">PC28</td>
+                    </tr>
+                    <tr>
+                        <td id="pc29" class="available" data-id="pc29">PC29</td>
+                        <td id="pc30" class="available" data-id="pc30">PC30</td>
+                        <td id="pc31" class="available" data-id="pc31">PC31</td>
+                        <td id="pc32" class="available" data-id="pc32">PC32</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="form-container" class="form-container hidden">
+            <h2>노트북 대여 정보 입력</h2>
+            <form id="rental-form">
+                <div class="form-group">
+                    <label for="teacher">담당 교사:</label>
+                    <input type="text" id="teacher" name="teacher" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">과목:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label>노트북 번호:</label>
+                    <div id="laptop-number" class="checkbox-group"></div>
+                </div>
+                <div class="form-group">
+                    <label>이용 시간:</label>
+                    <div id="rental-duration" class="checkbox-group">
+                        <label><input type="checkbox" name="rental-duration" value="m">아침시간</label>
+                        <label><input type="checkbox" name="rental-duration" value="1">1교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="2">2교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="3">3교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="4">4교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="l">점심시간</label>
+                        <label><input type="checkbox" name="rental-duration" value="5">5교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="6">6교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="6">7교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="6">8교시</label>
+                        <label><input type="checkbox" name="rental-duration" value="d">석식시간</label>
+                        <label><input type="checkbox" name="rental-duration" value="s">야자시간</label>
+
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">대여하기</button>
+            </form>
+        </div>
+        <div id="info-modal" class="info-modal hidden">
+            <button id="modal-close-btn" class="modal-close-btn">닫기</button>
+            <div id="modal-content"></div>
+        </div>  
+    
+        <div id="modal-overlay" class="modal-overlay"></div>    
+    </main>
+    <aside class="right">
+        <h2>노트북 정보</h2>
+        <div class="rented-laptops">
+            <div id="rented-laptops" class="rental-info">
+            </div>
+        </div>
+        </div>
+        
+    </aside>
+    <footer>
+        <p><br></p>
+    </footer>
+    <script src="c.js"></script>
+    <script src="d.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-firestore-compat.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCFDYD0TFQ9DoX7I72hlfUw60Sd6v6u9jQ",
+    authDomain: "laptop-e514c.firebaseapp.com",
+    projectId: "laptop-e514c",
+    storageBucket: "laptop-e514c.appspot.com",
+    messagingSenderId: "494519284115",
+    appId: "1:494519284115:web:9841c3b8ed381c74813866",
+    measurementId: "G-0E24XVTRJ5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+<script>
+    const db = firebase.firestore();
+    db.collection('Rental Info').get.then((결과)=>{
+        결과.forEach((doc)=>{
+            console.log(doc)
+        })
+    })
+</script>
+
+</body>
+</html>
